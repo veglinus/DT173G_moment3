@@ -4,16 +4,107 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
-    <title>Test av Gulp!</title>
+    <title>Sir Bourbon Dixieland Band</title>
 </head>
 <body>
-    <h1>Detta är ett test av gulp!</h1>
-    <script src="js/main.js"></script>
+    <header>
+        <nav id="menu">
+            <ul>
+                <li><a href="#1">Länk 1</a></li>
+                <li><a href="#2">Länk 2</a></li>
+                <li><a href="#3">Länk 3</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="container">
+        <section id="main">
+            <h1>Sir Bourbon Dixieland Band</h1>
 
-    <ul>
-        <li><a href="#1">Länk 1</a></li>
-        <li><a href="#2">Länk 2</a></li>
-        <li><a href="#3">Länk 3</a></li>
-    </ul>
+            <p id="slogan">Absolut Dixieland sedan början på 80-talet</p>
+
+            <div id="bildspel">
+
+                <img src="" alt="">
+
+            </div>
+            
+
+
+        </section>
+
+        
+        <section id="kontakt">
+            <h2>Kontakta oss!</h2>
+            <form action="mailto:linushvenfelt@gmail.com">
+                <label for="text">Namn:</label><br>
+                <input type="text" name="namn" id="namn" required><br>
+
+                <label for="email">Email:</label><br>
+                <input type="email" name="email" id="email" required><br>
+
+                <label for="tel">Telefonnummer: <i>(frivilligt)</i></label><br>
+                <input type="tel" name="tel" id="tel"><br>
+
+                <label for="msg">Meddelande:</label><br>
+                <textarea name="msg" id="msg" cols="30" rows="10" required></textarea>
+                <br>
+                <input type="submit" value="Skicka">
+            </form>
+        </section>
+
+
+        
+        <section id="spelningar">
+            <h2>Spelningar</h2>
+            <div class="spelning">
+                <h3><a href="https://www.casinocosmopol.se/goteborg/noje/lunchjazz">Casino Cosmopol, Göteborg</a></h3>
+                <p>
+                    16 september kl 16:30 - 18:30<br>
+                    Bordsbeställning: tel. 020-219219
+                    <b>INSTÄLLD</b>
+                </p>
+            </div>
+            <div class="spelning">
+                <h3><a href="https://www.svenskakyrkan.se/kalender?date=2020-10-08&webid=1099717&locationAction=Custom&locationName=T%C3%B6l%C3%B6-%C3%84lvs%C3%A5ker%20pastorat&orgId=1223,1222,12801">Tölö Kyrka, Kungsbacka</a></h3>
+                <p>
+                    8 oktober kl 13:00 - 14:30<br>
+                    Öppen tillställning
+                </p>
+            </div>
+            <div class="spelning">
+                <h3><a href="https://www.partille.se/uppleva--gora/evenemang/">Partille Kulturcentrum, Partille</a></h3>
+                <p>
+                    21 oktober kl 18:00 - 20:00<br>
+                    Mer detaljer kommer senare
+                </p>
+            </div>
+            <div class="spelning">
+                <h3><a href="https://www.facebook.com/IOGT-NTO-Vetlanda-1841417746138674/">IOGT-NTO, Vetlanda</a></h3>
+                <p>
+                    25 oktober kl 15:00 - 18:00<br>
+                    Mer detaljer kommer senare
+                </p>
+            </div>
+            <div class="spelning">
+                <h3><a href="">Olskrokstorget, Göteborg</a></h3>
+                <p>
+                    12 december kl 11:00 - 13:00<br>
+                    Mer detaljer kommer senare
+                </p>
+            </div>
+        </section>
+
+        <footer>
+            <nav id="footermenu">
+                <ul>
+                    <li>PR-Broschyr</li>
+                    <li>Historia</li>
+                    <li>Produktioner</li>
+                </ul>
+            </nav>
+        </footer>
+
+    </div>
+    <script src="js/main.js"></script>
 </body>
 </html>
