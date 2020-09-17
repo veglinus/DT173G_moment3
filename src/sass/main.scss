@@ -1,13 +1,4 @@
-$font-stack:    Helvetica, sans-serif;
-$primary-color: #333;
-
-$light-color: #F4F7F3;
-$light-accent: #E6A748;
-$primary-color: #ADAFC4;
-$dark-accent: #EF6495;
-$dark-shade: #363F67;
-
-$text-color: #272c43;
+@import "colors";
 
 // https://css-tricks.com/snippets/sass/sass-things-links/
 $a-tags: "a, a:active, a:hover, a:visited";
@@ -19,8 +10,6 @@ body {
     color: $text-color;
     background-color: $light-color;
 }
-
-
 
 #{$a-tags} {
     color: $dark-shade;

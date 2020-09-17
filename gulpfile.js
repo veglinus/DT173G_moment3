@@ -1,6 +1,11 @@
 const {src, dest, watch, series, parallel} = require("gulp");
 var sourcemaps = require('gulp-sourcemaps');
 var browserSync = require('browser-sync').create();
+const concat = require("gulp-concat");
+const uglify = require("gulp-uglify-es").default;
+//const cleanCSS = require('gulp-clean-css');
+const imagemin = require("gulp-imagemin");
+const del = require("del");
 
 const sass = require('gulp-sass'); 
 sass.compiler = require('node-sass');
@@ -12,28 +17,48 @@ const files = {
     js: "src/**/*.js",
     imgs: "src/imgs/*"
 }
+
 // Kopierar över HTML filer
 function copyhtml() {
     return src(files.html)
         .pipe(dest('pub'))
+        .pipe(browserSync.stream())
 }
+
 // Minifiera och sammanslår JS
 function minifyJS() {
     return src(files.js)
-        //.pipe(concat("main.js"))
-        //.pipe(uglify())
-        .pipe(dest('pub/js')
-        )
+        .pipe(concat("main.js"))
+        .pipe(uglify())
+        .pipe(dest('pub/js'))
+        .pipe(browserSync.stream())
 }
+
 // Minifiera och sammanslå CSS
 /*
 function minifyCSS() {
     return src(files.css)
     .pipe(concat("styles.css"))
     .pipe(cleanCSS())
-    .pipe(dest('pub/css')
-    )
+    .pipe(dest('pub/css'))
+    .pipe(browserSync.stream())
 }*/
+
+// Minifiera bilder, sänker kvalitén på dem
+function minifyIMGS() {
+    return src(files.imgs)
+    .pipe(imagemin([
+        imagemin.mozjpeg({quality: 50, progressive: true}),
+        imagemin.optipng({optimizationLevel: 2})
+    ]))
+    .pipe(dest('pub/imgs'))
+    .pipe(browserSync.stream())
+}
+
+// Tar bort pub mappen
+function clean() {
+    return del(["pub"]);
+}
 
 
 // https://elearn20.miun.se/moodle/mod/resource/view.php?id=626612
@@ -46,9 +71,6 @@ function sassTask() {
     .pipe(browserSync.stream());
 }
 
-
-
-
 // Watchtask som kollar efter förändringar
 function watchTask() {
     browserSync.init({
@@ -56,10 +78,23 @@ function watchTask() {
             baseDir: "./pub"
         }
     });
-    watch(files.html).on("change", browserSync.reload);
-    watch([files.html, files.js, files.css, files.sass, files.imgs], parallel(sassTask, copyhtml, minifyJS));
+
+    watch([files.imgs], minifyIMGS);
+    watch([files.html], copyhtml);
+    watch([files.js], minifyJS);
+    //watch([files.css], minifyCSS);
+    watch([files.sass], sassTask);
 }
 // Default task
 exports.default = series(
-    parallel(sassTask, copyhtml, minifyJS),
-    watchTask)
+    clean,
+    parallel(copyhtml, minifyJS, minifyIMGS, sassTask),
+    watchTask
+)
+
+exports.clean = clean;
+exports.sassTask = sassTask;
+exports.copyhtml = copyhtml;
+exports.minifyJS = minifyJS;
+//exports.minifyCSS = minifyCSS;
+exports.minifyIMGS = minifyIMGS;
