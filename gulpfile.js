@@ -15,7 +15,7 @@ const files = {
     css: "src/**/*.css",
     sass: "src/sass/*.scss",
     js: "src/**/*.js",
-    imgs: "src/imgs/*"
+    imgs: "src/**/*.jpg"
 }
 
 // Kopierar över HTML filer
@@ -51,7 +51,7 @@ function minifyIMGS() {
         imagemin.mozjpeg({quality: 50, progressive: true}),
         imagemin.optipng({optimizationLevel: 2})
     ]))
-    .pipe(dest('pub/imgs'))
+    .pipe(dest('pub'))
     .pipe(browserSync.stream())
 }
 

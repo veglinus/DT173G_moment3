@@ -7,10 +7,16 @@ $a-tags-hover: "a:active, a:hover";
 
 
 body {
+    width: 100%;
     margin: 0;
     font: 100% $font-stack;
-    color: $text-color;
-    background-color: $light-color;
+    color: $light-color;
+    background-color: $dark-shade;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
 
     p {
         font-size: 1.2em;
@@ -32,8 +38,34 @@ body {
     }
     #bildspel {
         img {
-
+            display: none;
         }
+    }
+}
+
+#kontakt {
+    form {
+        label {
+            margin-left: 5%;
+        }
+        input[type=text], input[type=email], input[type=tel], textarea {
+            text-align: center;
+            margin-left: 5%;
+            margin-right: 5%;
+            width: 90%;
+        }
+        input[type=submit] {
+            width: 20%;
+            margin-left: 40%;
+            margin-right: 40%;
+        }
+    }
+}
+
+#video {
+    iframe {
+        width: 100%;
+        height: auto;
     }
 }
 
@@ -43,6 +75,7 @@ section {
     padding-right: 2%;
 }
 
+/*
 section:nth-of-type(odd) {
     background-color: $light-color;
     color: black;
@@ -50,16 +83,16 @@ section:nth-of-type(odd) {
 section:nth-of-type(even) {
     background-color: $dark-shade;
     color: white;
-}
+}*/
 section:not(:first-of-type) {
     padding-top: 1%;
 }
 
 #{$a-tags} {
-    color: $dark-shade;
+    color: $light-color;
 }
 #{$a-tags-hover} {
-    color: $light-accent;
+    color: $light-color;
 }
 
 #spelningar {
