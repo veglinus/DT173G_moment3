@@ -1,0 +1,15 @@
+$font-stack: "Gill Sans Nova", sans-serif;
+$font-title: "Gill Sans Nova", "Arial Black", sans-serif;
+
+
+@mixin title($primary: true) {
+    font-family: $font-title;
+    
+    font-weight: 800;
+
+    @if $primary {
+        text-shadow: 5px 5px $primary-color;
+    } @else {
+        text-shadow: 5px 5px $dark-shade;
+    }
+}

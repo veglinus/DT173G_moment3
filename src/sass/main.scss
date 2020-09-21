@@ -1,10 +1,21 @@
+/*
+x Att du använd partials för att få en bra filstruktur.
+x Variabler.
+x Nesting.
+x Mixins.
+Selector inheritance (nyckelordet "@extend").
+If/else-satser.
+x Color functions (darken, lighten minimun, men använda gärna även fler)
+*/
+
 @import "colors";
+@import "text";
 @import "generals";
+@import 'sections';
 
 // https://css-tricks.com/snippets/sass/sass-things-links/
 $a-tags: "a, a:active, a:hover, a:visited";
 $a-tags-hover: "a:active, a:hover";
-
 
 body {
     width: 100%;
@@ -16,93 +27,29 @@ body {
     img {
         width: 100%;
         height: auto;
+        display: block;
+    }
+
+    #container {
+        width: 100%;
+        @include margincenter;
+    }
+    
+    h1 { // Title
+        @include title;
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 1.7em;
     }
 
     p {
-        font-size: 1.2em;
+        font-size: 1.05em;
+    }
+
+    #{$a-tags} {
+        color: $light-color;
+    }
+    #{$a-tags-hover} {
+        color: $light-color;
     }
 }
-#container {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#main {
-    h1 {
-        text-align: center;
-        font-size: 1.5em;
-    }
-    #slogan {
-        text-align: center;
-        text-transform: uppercase;
-    }
-    #bildspel {
-        img {
-            display: none;
-        }
-    }
-}
-
-#kontakt {
-    form {
-        label {
-            margin-left: 5%;
-        }
-        input[type=text], input[type=email], input[type=tel], textarea {
-            text-align: center;
-            margin-left: 5%;
-            margin-right: 5%;
-            width: 90%;
-        }
-        input[type=submit] {
-            width: 20%;
-            margin-left: 40%;
-            margin-right: 40%;
-        }
-    }
-}
-
-#video {
-    iframe {
-        width: 100%;
-        height: auto;
-    }
-}
-
-section {
-    height: 100vh;
-    padding-left: 2%;
-    padding-right: 2%;
-}
-
-/*
-section:nth-of-type(odd) {
-    background-color: $light-color;
-    color: black;
-}
-section:nth-of-type(even) {
-    background-color: $dark-shade;
-    color: white;
-}*/
-section:not(:first-of-type) {
-    padding-top: 1%;
-}
-
-#{$a-tags} {
-    color: $light-color;
-}
-#{$a-tags-hover} {
-    color: $light-color;
-}
-
-#spelningar {
-    .spelning {
-        h3 {
-            margin-bottom: 0.3em;
-        }
-        p {
-            margin-top: 0;
-        }
-    }
-}
-        

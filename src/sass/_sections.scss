@@ -1,0 +1,102 @@
+@mixin boxfix {
+    background-color: darken($color: $dark-shade, $amount: 10%);
+    .padding:last-child {
+        margin-block-end: 0;
+        padding-bottom: 2%;
+    }
+}
+section:nth-of-type(odd) {
+    @include boxfix;
+}
+
+section {
+    h2 {
+        margin-block-start: 0.5em;
+        font-family: $font-title;
+        font-weight: 800;
+    }
+}
+
+section:not(:first-of-type) { // Border
+    padding-top: 1%;
+    border-top: 1px solid white;
+}
+
+#main {
+    padding-top: 5%;
+    h2:first-of-type {
+        margin-top: 0;
+    }
+    #slogan {
+        font-family: $font-title;
+        font-size: 1.1em;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 800;
+    }
+    #bildspel {
+        img {
+            display: none;
+        }
+    }
+}
+
+#kontakt {
+    form {
+        label {
+            margin-left: 5%;
+        }
+        input[type=text], input[type=email], input[type=tel], textarea {
+            text-align: center;
+            margin-left: 5%;
+            margin-right: 5%;
+            width: 90%;
+        }
+        input[type=submit] {
+            width: 20%;
+            margin-left: 40%;
+            margin-right: 40%;
+        }
+    }
+}
+
+#spelningar {
+    .spelning {
+        border-radius: 10px;
+        padding-left: 2%;
+        padding-right: 2%;
+        background-color: darken($color: $dark-accent, $amount: 10%);
+        h3 {
+            @include title($primary: false);
+            padding-top: 2%;
+            margin-bottom: 0.7em;
+            a {
+                text-decoration: none;
+            }
+        }
+        p {
+            margin-top: 0;
+            padding-bottom: 2%;
+        }
+        .cancelled {
+            text-transform: uppercase;
+            font-weight: bolder;
+            font-size: 1.2em;
+            background-color: $dark-shade;
+            border-radius: 15px;
+            padding: 1% 2%;
+        }
+    }
+}
+
+#video {
+    iframe {
+        width: 100%;
+        height: 40vh;
+    }
+}
+
+footer {
+    border-top: 1px solid white;
+    background-color: darken($color: $dark-shade, $amount: 10%);
+}

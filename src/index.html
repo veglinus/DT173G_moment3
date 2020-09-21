@@ -10,35 +10,35 @@
     <header>
         <nav id="menu" class="hide">
             <ul>
-                <li><a href="#1">Länk 1</a></li>
-                <li><a href="#2">Länk 2</a></li>
                 <li><a href="#kontakt">Kontakt</a></li>
+                <li><a href="#spelningar">Spelningar</a></li>
+                <li><a href="#1">Lyssna</a></li>
+
             </ul>
         </nav>
     </header>
     <div id="container">
+        <h1>Sir Bourbon Dixieland Band</h1>
+        <img src="imgs/fullband.jpg" alt="Fullband bild" id="banner">
+
         <section id="main">
-            <h1>Sir Bourbon Dixieland Band</h1>
-            <img src="imgs/fullband.jpg" alt="fullband">
+            <div class="padding">
+                <h2 id="slogan">Absolut Dixieland sedan början på 80-talet</h2>
 
-            <p id="slogan">Absolut Dixieland sedan början på 80-talet</p>
+                <div id="bildspel">
+                    <img src="imgs/bildspel/1.jpg" alt="Bild 1" class="slideImage">
+                    <img src="imgs/bildspel/2.jpg" alt="Bild 2" class="slideImage">
+                    <img src="imgs/bildspel/3.jpg" alt="Bild 3" class="slideImage">
+                </div>
 
-            <div id="bildspel">
-                <img src="imgs/bildspel/1.jpg" alt="Bild 1" class="slideImage">
-                <img src="imgs/bildspel/2.jpg" alt="Bild 2" class="slideImage">
-                <img src="imgs/bildspel/3.jpg" alt="Bild 3" class="slideImage">
+                <p>Sir Bourbon startade i Göteborgs södra förorter (suburbs) av sju ”killar”, som alla längtade efter att spela jazz. Redan från början var vårt motto att spela glad och lättillgänglig jazz, överallt. Det har blivit många härliga spelningar genom åren. Särskilt kommer vi ihåg Hannover Jazzclub, Cotton Club i Hamburg och många svenska jazzklubbar. För att inte tala om sommarkvällarna på Göta Kanal båtarna och Bohus Malmön, jazzfestivaler i Göteborg, Askersund, Braunschweig, Jazz in Duketownm (Holland), Dresden och många fler.</p>
             </div>
-
-            <p>Sir Bourbon startade i Göteborgs södra förorter (suburbs) av sju ”killar”, som alla längtade efter att spela jazz. Redan från början var vårt motto att spela glad och lättillgänglig jazz, överallt. Det har blivit många härliga spelningar genom åren. Särskilt kommer vi ihåg Hannover Jazzclub, Cotton Club i Hamburg och många svenska jazzklubbar. För att inte tala om sommarkvällarna på Göta Kanal båtarna och Bohus Malmön, jazzfestivaler i Göteborg, Askersund, Braunschweig, Jazz in Duketownm (Holland), Dresden och många fler.</p>
-            
-
-
         </section>
 
         
-        <section id="kontakt">
+        <section id="kontakt" class="padding">
             <h2>Kontakta oss!</h2>
-            <form action="mailto:linushvenfelt@gmail.com">
+            <form action="mailto:linushvenfelt@gmail.com" id="form">
                 <label for="text">Namn:</label><br>
                 <input type="text" name="namn" id="namn" required><br>
 
@@ -53,56 +53,59 @@
                 <br>
                 <input type="submit" value="Skicka">
             </form>
+            <br>
         </section>
 
 
         
         <section id="spelningar">
-            <h2>Spelningar</h2>
-            <div class="spelning">
-                <h3><a href="https://www.casinocosmopol.se/goteborg/noje/lunchjazz">Casino Cosmopol, Göteborg</a></h3>
-                <p>
-                    16 september kl 16:30 - 18:30<br>
-                    Bordsbeställning: tel. 020-219219
-                    <b>INSTÄLLD</b>
-                </p>
-            </div>
-            <div class="spelning">
-                <h3><a href="https://www.svenskakyrkan.se/kalender?date=2020-10-08&webid=1099717&locationAction=Custom&locationName=T%C3%B6l%C3%B6-%C3%84lvs%C3%A5ker%20pastorat&orgId=1223,1222,12801">Tölö Kyrka, Kungsbacka</a></h3>
-                <p>
-                    8 oktober kl 13:00 - 14:30<br>
-                    Öppen tillställning
-                </p>
-            </div>
-            <div class="spelning">
-                <h3><a href="https://www.partille.se/uppleva--gora/evenemang/">Partille Kulturcentrum, Partille</a></h3>
-                <p>
-                    21 oktober kl 18:00 - 20:00<br>
-                    Mer detaljer kommer senare
-                </p>
-            </div>
-            <div class="spelning">
-                <h3><a href="https://www.facebook.com/IOGT-NTO-Vetlanda-1841417746138674/">IOGT-NTO, Vetlanda</a></h3>
-                <p>
-                    25 oktober kl 15:00 - 18:00<br>
-                    Mer detaljer kommer senare
-                </p>
-            </div>
-            <div class="spelning">
-                <h3><a href="">Olskrokstorget, Göteborg</a></h3>
-                <p>
-                    12 december kl 11:00 - 13:00<br>
-                    Mer detaljer kommer senare
-                </p>
+            <div class="padding">
+                <h2>Spelningar</h2>
+                <div class="spelning">
+                    <h3><a href="https://www.casinocosmopol.se/goteborg/noje/lunchjazz">Casino Cosmopol, Göteborg</a></h3>
+                    <p>
+                        16 september kl 16:30 - 18:30<br>
+                        Bordsbeställning: tel. 020-219219
+                    </p>
+                    <p><span class="cancelled">INSTÄLLD</span></p>
+                </div>
+                <div class="spelning">
+                    <h3><a href="https://www.svenskakyrkan.se/kalender?date=2020-10-08&webid=1099717&locationAction=Custom&locationName=T%C3%B6l%C3%B6-%C3%84lvs%C3%A5ker%20pastorat&orgId=1223,1222,12801">Tölö Kyrka, Kungsbacka</a></h3>
+                    <p>
+                        8 oktober kl 13:00 - 14:30<br>
+                        Öppen tillställning
+                    </p>
+                </div>
+                <div class="spelning">
+                    <h3><a href="https://www.partille.se/uppleva--gora/evenemang/">Partille Kulturcentrum, Partille</a></h3>
+                    <p>
+                        21 oktober kl 18:00 - 20:00<br>
+                        Mer detaljer kommer senare
+                    </p>
+                </div>
+                <div class="spelning">
+                    <h3><a href="https://www.facebook.com/IOGT-NTO-Vetlanda-1841417746138674/">IOGT-NTO, Vetlanda</a></h3>
+                    <p>
+                        25 oktober kl 15:00 - 18:00<br>
+                        Mer detaljer kommer senare
+                    </p>
+                </div>
+                <div class="spelning">
+                    <h3><a href="">Olskrokstorget, Göteborg</a></h3>
+                    <p>
+                        12 december kl 11:00 - 13:00<br>
+                        Mer detaljer kommer senare
+                    </p>
+                </div>
             </div>
         </section>
 
         <section id="video">
-            <!--
-            <iframe src="https://www.youtube.com/embed/watch?v=P-z0EST6cdg" frameborder="0" allowfullscreen></iframe>
-            -->
-            <!-- TODO: Youtube video -->
-            <p><a href="https://www.youtube.com/playlist?list=PLekb4NrK1_Gb2SHvpiJKfaDbRQNjq8ex0">Lyssna på flera låtar</a></p>
+            <div class="padding">
+                <h2>Lyssna på oss</h2>
+            </div>
+            <div id="ytplayer"></div>
+            <p class="padding"><a href="https://www.youtube.com/playlist?list=PLekb4NrK1_Gb2SHvpiJKfaDbRQNjq8ex0">Lyssna på flera låtar</a></p>
         </section>
 
         <footer>
