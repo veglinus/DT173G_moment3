@@ -8,29 +8,27 @@
 </head>
 <body>
     <header>
-        <nav id="menu" class="hide">
-            <ul>
-                <li><a href="#kontakt">Kontakt</a></li>
-                <li><a href="#spelningar">Spelningar</a></li>
-                <li><a href="#1">Lyssna</a></li>
-
-            </ul>
-        </nav>
+        <div id="bannerbox">
+            <div class="padding">
+                <h1>Sir Bourbon Dixieland Band</h1>
+                <nav id="menu">
+                    <ul>
+                        <li><a href="#kontakt">Kontakt</a></li>
+                        <li><a href="#spelningar">Spelningar</a></li>
+                        <li><a href="#video">Lyssna</a></li>
+                        <li><a href="#album">Album</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </nav>
+                <img src="imgs/cropped.jpg" alt="Fullband bild" id="banner" class="overlay">
+            </div>
+        </div>
     </header>
     <div id="container">
-        <h1>Sir Bourbon Dixieland Band</h1>
-        <img src="imgs/fullband.jpg" alt="Fullband bild" id="banner">
 
         <section id="main">
             <div class="padding">
                 <h2 id="slogan">Absolut Dixieland sedan början på 80-talet</h2>
-
-                <div id="bildspel">
-                    <img src="imgs/bildspel/1.jpg" alt="Bild 1" class="slideImage">
-                    <img src="imgs/bildspel/2.jpg" alt="Bild 2" class="slideImage">
-                    <img src="imgs/bildspel/3.jpg" alt="Bild 3" class="slideImage">
-                </div>
-
                 <p>Sir Bourbon startade i Göteborgs södra förorter (suburbs) av sju ”killar”, som alla längtade efter att spela jazz. Redan från början var vårt motto att spela glad och lättillgänglig jazz, överallt. Det har blivit många härliga spelningar genom åren. Särskilt kommer vi ihåg Hannover Jazzclub, Cotton Club i Hamburg och många svenska jazzklubbar. För att inte tala om sommarkvällarna på Göta Kanal båtarna och Bohus Malmön, jazzfestivaler i Göteborg, Askersund, Braunschweig, Jazz in Duketownm (Holland), Dresden och många fler.</p>
             </div>
         </section>
@@ -56,64 +54,88 @@
             <br>
         </section>
 
+        <div class="wrapper"> <!-- För att hålla bakgrunden en färg på stora devices -->
+            <div class="flexbox"> <!-- Flexbox för Spelningar & video på stora devices -->
+                <section id="spelningar">
+                    <div class="padding">
+                        <h2>Spelningar</h2>
+                        <div class="spelning">
+                            <h3><a href="https://www.casinocosmopol.se/goteborg/noje/lunchjazz">Casino Cosmopol, Göteborg</a></h3>
+                            <p>
+                                16 september kl 16:30 - 18:30<br>
+                                Bordsbeställning: tel. 020-219219
+                            </p>
+                            <p><span class="cancelled">INSTÄLLD</span></p>
+                        </div>
+                        <div class="spelning">
+                            <h3><a href="https://www.svenskakyrkan.se/kalender?date=2020-10-08&webid=1099717&locationAction=Custom&locationName=T%C3%B6l%C3%B6-%C3%84lvs%C3%A5ker%20pastorat&orgId=1223,1222,12801">Tölö Kyrka, Kungsbacka</a></h3>
+                            <p>
+                                8 oktober kl 13:00 - 14:30<br>
+                                Öppen tillställning
+                            </p>
+                        </div>
+                        <div class="spelning">
+                            <h3><a href="https://www.partille.se/uppleva--gora/evenemang/">Partille Kulturcentrum, Partille</a></h3>
+                            <p>
+                                21 oktober kl 18:00 - 20:00<br>
+                                Mer detaljer kommer senare
+                            </p>
+                        </div>
+                        <div class="spelning">
+                            <h3><a href="https://www.facebook.com/IOGT-NTO-Vetlanda-1841417746138674/">IOGT-NTO, Vetlanda</a></h3>
+                            <p>
+                                25 oktober kl 15:00 - 18:00<br>
+                                Mer detaljer kommer senare
+                            </p>
+                        </div>
+                        <div class="spelning">
+                            <h3><a href="">Olskrokstorget, Göteborg</a></h3>
+                            <p>
+                                12 december kl 11:00 - 13:00<br>
+                                Mer detaljer kommer senare
+                            </p>
+                        </div>
+                    </div>
+                </section>
 
-        
-        <section id="spelningar">
-            <div class="padding">
-                <h2>Spelningar</h2>
-                <div class="spelning">
-                    <h3><a href="https://www.casinocosmopol.se/goteborg/noje/lunchjazz">Casino Cosmopol, Göteborg</a></h3>
-                    <p>
-                        16 september kl 16:30 - 18:30<br>
-                        Bordsbeställning: tel. 020-219219
-                    </p>
-                    <p><span class="cancelled">INSTÄLLD</span></p>
-                </div>
-                <div class="spelning">
-                    <h3><a href="https://www.svenskakyrkan.se/kalender?date=2020-10-08&webid=1099717&locationAction=Custom&locationName=T%C3%B6l%C3%B6-%C3%84lvs%C3%A5ker%20pastorat&orgId=1223,1222,12801">Tölö Kyrka, Kungsbacka</a></h3>
-                    <p>
-                        8 oktober kl 13:00 - 14:30<br>
-                        Öppen tillställning
-                    </p>
-                </div>
-                <div class="spelning">
-                    <h3><a href="https://www.partille.se/uppleva--gora/evenemang/">Partille Kulturcentrum, Partille</a></h3>
-                    <p>
-                        21 oktober kl 18:00 - 20:00<br>
-                        Mer detaljer kommer senare
-                    </p>
-                </div>
-                <div class="spelning">
-                    <h3><a href="https://www.facebook.com/IOGT-NTO-Vetlanda-1841417746138674/">IOGT-NTO, Vetlanda</a></h3>
-                    <p>
-                        25 oktober kl 15:00 - 18:00<br>
-                        Mer detaljer kommer senare
-                    </p>
-                </div>
-                <div class="spelning">
-                    <h3><a href="">Olskrokstorget, Göteborg</a></h3>
-                    <p>
-                        12 december kl 11:00 - 13:00<br>
-                        Mer detaljer kommer senare
-                    </p>
-                </div>
+                <section id="video">
+                    <div class="padding">
+                        <h2>Lyssna på oss</h2>
+                    </div>
+                    <div id="ytplayer"></div>
+                    <p class="padding"><a href="https://www.youtube.com/playlist?list=PLekb4NrK1_Gb2SHvpiJKfaDbRQNjq8ex0">Lyssna på flera låtar</a></p>
+                </section>
             </div>
+        </div>
+
+        <section id="album">
+            <div class="padding">
+                <h2>Album</h2>
+
+                <div class="flexgrid">
+                    <img src="imgs/album/image-3.png" alt="Albumbild">
+                    <img src="imgs/album/image-4.png" alt="Albumbild">
+                    <img src="imgs/album/image-5.png" alt="Albumbild">
+                    <img src="imgs/album/image-6.png" alt="Albumbild">
+                    <img src="imgs/album/image-7.png" alt="Albumbild">
+                    <img src="imgs/album/image-8.png" alt="Albumbild">
+                    <img src="imgs/album/image-9.png" alt="Albumbild">
+                    <img src="imgs/album/image-10.png" alt="Albumbild">
+                    <img src="imgs/album/image-11.png" alt="Albumbild">
+                    <img src="imgs/album/image-13.png" alt="Albumbild">
+                </div>
+
+            </div>
+
         </section>
 
-        <section id="video">
-            <div class="padding">
-                <h2>Lyssna på oss</h2>
-            </div>
-            <div id="ytplayer"></div>
-            <p class="padding"><a href="https://www.youtube.com/playlist?list=PLekb4NrK1_Gb2SHvpiJKfaDbRQNjq8ex0">Lyssna på flera låtar</a></p>
-        </section>
+
 
         <footer>
             <nav id="footermenu">
                 <ul>
-                    <li>Press</li>
-                    <li>Historia</li>
-                    <li>Produktioner</li>
+                    <li><a href="#">Produktioner</a></li>
+                    <li><a href="#">Historia</a></li>
                 </ul>
             </nav>
         </footer>

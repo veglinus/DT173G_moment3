@@ -9,6 +9,16 @@ section:nth-of-type(odd) {
     @include boxfix;
 }
 
+#bannerbox {
+    background-color: black;
+
+    h1 {
+        margin-block-start: 0;
+        padding-top: 0.67em;
+    }
+}
+
+
 section {
     h2 {
         margin-block-start: 0.5em;
@@ -19,11 +29,11 @@ section {
 
 section:not(:first-of-type) { // Border
     padding-top: 1%;
-    border-top: 1px solid white;
+    //border-top: 1px solid white;
 }
 
 #main {
-    padding-top: 5%;
+    padding-top: 2%;
     h2:first-of-type {
         margin-top: 0;
     }
@@ -42,15 +52,22 @@ section:not(:first-of-type) { // Border
 }
 
 #kontakt {
+    h2 {
+        text-align: center;
+    }
     form {
         label {
             margin-left: 5%;
         }
-        input[type=text], input[type=email], input[type=tel], textarea {
+        input[type=text], input[type=email], input[type=tel] {
             text-align: center;
             margin-left: 5%;
             margin-right: 5%;
             width: 90%;
+        }
+        textarea {
+            @extend input[type=text];
+            text-align: left;
         }
         input[type=submit] {
             width: 20%;
@@ -96,7 +113,54 @@ section:not(:first-of-type) { // Border
     }
 }
 
-footer {
-    border-top: 1px solid white;
-    background-color: darken($color: $dark-shade, $amount: 10%);
+#album {
+    img {
+        margin: 2%;
+        width: max-content;
+        height: auto;
+        max-width: 200px;
+    }
+
+    .flexgrid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .flexbox {
+        display: flex;
+
+        section {
+            background-color: darken($color: $dark-shade, $amount: 10%);
+            flex: 50%;
+        }
+
+    }
+    #album {
+        background-color: $dark-shade;
+    }
+
+    #kontakt {
+        form {
+            label {
+                margin-left: 25%;
+            }
+            input[type=text], input[type=email], input[type=tel], textarea {
+                width: 50%;
+                margin-left: 25%;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .wrapper {
+        background-color: darken($color: $dark-shade, $amount: 10%);
+    }
+    .flexbox {
+        @include margincenter;
+        max-width: 1200px;
+    }
 }

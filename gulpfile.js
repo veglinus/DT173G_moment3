@@ -15,7 +15,8 @@ const files = {
     css: "src/**/*.css",
     sass: "src/sass/*.scss",
     js: "src/**/*.js",
-    imgs: "src/**/*.jpg"
+    imgs: "src/**/*",
+    assets: "src/assets/*"
 }
 
 // Kopierar över HTML filer
@@ -23,6 +24,12 @@ function copyhtml() {
     return src(files.html)
         .pipe(dest('pub'))
         .pipe(browserSync.stream())
+}
+
+// Kopierar över assets, tex fonter
+function copyAssets() {
+    return src(files.assets)
+    .pipe(dest('pub/assets'))
 }
 
 // Minifiera och sammanslår JS
@@ -49,7 +56,7 @@ function minifyIMGS() {
     return src(files.imgs)
     .pipe(imagemin([
         imagemin.mozjpeg({quality: 50, progressive: true}),
-        imagemin.optipng({optimizationLevel: 2})
+        imagemin.optipng({optimizationLevel: 0})
     ]))
     .pipe(dest('pub'))
     .pipe(browserSync.stream())
@@ -61,13 +68,13 @@ function clean() {
 }
 
 
-// https://elearn20.miun.se/moodle/mod/resource/view.php?id=626612
+// Kompilerar .scss till css
 function sassTask() {
     return src("src/sass/*.scss")
     .pipe(sourcemaps.init())
     .pipe(sass()).on("error", sass.logError)
     .pipe(dest("pub/css"))
-    // .pipe(sourcemaps.write())
+    .pipe(sourcemaps.write())
     .pipe(browserSync.stream());
 }
 
@@ -84,11 +91,12 @@ function watchTask() {
     watch([files.js], minifyJS);
     //watch([files.css], minifyCSS);
     watch([files.sass], sassTask);
+    watch([files.assets], copyAssets);
 }
 // Default task
 exports.default = series(
     clean,
-    parallel(copyhtml, minifyJS, minifyIMGS, sassTask),
+    parallel(copyhtml, minifyJS, minifyIMGS, sassTask, copyAssets),
     watchTask
 )
 
@@ -98,3 +106,4 @@ exports.copyhtml = copyhtml;
 exports.minifyJS = minifyJS;
 //exports.minifyCSS = minifyCSS;
 exports.minifyIMGS = minifyIMGS;
+exports.copyAssets = copyAssets;

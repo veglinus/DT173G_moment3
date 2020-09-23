@@ -12,6 +12,10 @@
     margin-left: auto;
     margin-right: auto;
 }
+@mixin paddingcenter {
+    padding-left: auto;
+    padding-right: auto;
+}
 .overlay {
     
 }

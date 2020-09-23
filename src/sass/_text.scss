@@ -1,5 +1,5 @@
-$font-stack: "Gill Sans Nova", sans-serif;
-$font-title: "Gill Sans Nova", "Arial Black", sans-serif;
+$font-stack: "Gill Sans Nova", 'Open Sans', sans-serif;
+$font-title: "Gill Sans Nova", "Arial Black", 'Open Sans' sans-serif;
 
 
 @mixin title($primary: true) {

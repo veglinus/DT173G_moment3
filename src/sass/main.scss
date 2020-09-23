@@ -8,6 +8,16 @@ If/else-satser.
 x Color functions (darken, lighten minimun, men använda gärna även fler)
 */
 
+@font-face {
+    font-family: "Gill Sans Nova Ultra Bold";
+    src: url("../assets/GillSansUltraBoNova.ttf") format('truetype');
+}
+/*
+@font-face {
+    font-family: "Gill Sans Nova";
+    src: url("../assets/GillSansNova.ttf") format('truetype');
+}*/
+
 @import "colors";
 @import "text";
 @import "generals";
@@ -51,5 +61,83 @@ body {
     }
     #{$a-tags-hover} {
         color: $light-color;
+    }
+
+    #menu ul, #footermenu ul {
+        display: flex;
+        justify-content: space-evenly;
+        list-style: none;
+        margin: 2% 0%;
+        padding: 0;
+
+        li a {
+            text-decoration: none;
+            text-transform: uppercase;
+            font-style: $font-title;
+            font-weight: 700;
+            font-size: 1.7em;
+
+            background-color: $dark-shade;
+            border-radius: 10px;
+            padding: 2% 5%;
+        }
+
+    }
+
+    #footermenu {
+        justify-content: center;
+        margin-top: 2%;
+        background-color: darken($color: $dark-shade, $amount: 10%);
+        padding-top: 1%;
+        padding-bottom: 1%;
+
+        ul {
+            justify-content: space-around;
+            li a {
+                text-transform: none;
+                background-color: initial;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 768px) {
+    #menu ul {
+        display: block!important;
+        text-align: center;
+        li a {
+            display: block;
+            margin-top: 2%;
+            margin-bottom: 2%;
+            width: fit-content;
+            @include margincenter;
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #bannerbox {
+        text-align: center;
+        position: relative;
+
+        .overlay {
+            position: relative;
+            background-color: transparentize($color: $dark-shade, $amount: 0.5);
+        }
+        
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+        }
+    }
+
+    .padding {
+        width: 90%;
+        @include margincenter;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .padding {
+        max-width: 992px;
     }
 }
